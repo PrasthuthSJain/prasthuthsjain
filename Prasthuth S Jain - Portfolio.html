@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prasthuth S Jain | Portfolio & CV</title>
+
+  <style>
+    :root {
+      /* Brand Color System */
+      --midnight-charcoal: #17171C;
+      --cool-steel-grey: #6e7781;
+      --cool-steel-border: #d0d7de;
+      --coral-orange: #FF4B32;
+      
+      /* Surface & Layout Tokens */
+      --bg-gradient: radial-gradient(circle at 80% 20%, rgba(255, 75, 50, 0.08) 0%, #edf1f5 45%, #e4e9f0 100%);
+      --surface: #ffffff;
+      --surface-border: #e2e8f0;
+      --text-main: #17171C;
+      --text-muted: #64748b;
+      --radius: 14px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 246, 249, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(208, 215, 222, 0.6);
+      padding: 1.1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      color: var(--midnight-charcoal);
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--coral-orange);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--cool-steel-grey);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .nav-links a:hover {
+      color: var(--midnight-charcoal);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.6rem;
+      border-radius: 9999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--midnight-charcoal);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(23, 23, 28, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: #2a2a35;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(23, 23, 28, 0.28);
+    }
+
+    .btn-view {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.5rem 1.15rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--midnight-charcoal);
+      background: #f1f5f9;
+      border: 1px solid var(--surface-border);
+      text-decoration: none;
+      transition: var(--transition);
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    .btn-view:hover {
+      background: var(--coral-orange);
+      border-color: var(--coral-orange);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(255, 75, 50, 0.3);
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 900px;
+      margin: 4.5rem auto 4rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    /* -------------------------------------------------------------
+       METEOR ORBIT & PASSPORT PHOTO MORPH SYSTEM
+    ------------------------------------------------------------- */
+    .avatar-stage {
+      position: relative;
+      width: 165px;
+      height: 190px;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Revolving Meteor Ring (Active only during typewriter execution) */
+    .meteor-track {
+      position: absolute;
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: meteorSpin 1.2s linear infinite;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    /* Glowing fiery head and trailing comet body */
+    .meteor-track::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 
+        0 0 10px #ffffff,
+        0 0 20px var(--coral-orange),
+        0 0 35px var(--coral-orange);
+    }
+
+    .meteor-track::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top: 2px solid var(--coral-orange);
+      border-right: 2px solid rgba(255, 75, 50, 0.3);
+      filter: drop-shadow(0 0 8px rgba(255, 75, 50, 0.5));
+    }
+
+    /* Hide Meteor Track after text finishes */
+    .avatar-stage.completed .meteor-track {
+      opacity: 0;
+      animation: none;
+    }
+
+    /* The Badge: Starts as Circular PJ, Morphs to 3:4 Passport Card with Photo */
+    .avatar-badge {
+      position: relative;
+      z-index: 2;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffffff, #edf2f7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--midnight-charcoal);
+      border: 2px solid #ffffff;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      overflow: hidden;
+    }
+
+    /* Morph into prominent 3:4 Passport Size Block */
+    .avatar-stage.completed .avatar-badge {
+      width: 150px;
+      height: 190px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1.5px solid var(--cool-steel-border);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Normal Clean Hover for the Passport Photo Card */
+    .avatar-stage.completed .avatar-badge:hover {
+      transform: translateY(-4px);
+      border-color: var(--coral-orange);
+      box-shadow: 0 14px 34px rgba(23, 23, 28, 0.12), 0 0 0 1px rgba(255, 75, 50, 0.15);
+    }
+
+    /* Profile Photo inside Passport Rectangle */
+    .passport-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0;
+      transform: scale(1.08);
+      transition: opacity 0.45s ease 0.15s, transform 0.5s ease 0.15s;
+      z-index: 3;
+    }
+
+    /* Hide PJ initials and fade in photo when rectangle appears */
+    .avatar-stage.completed .pj-initials {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .avatar-stage.completed .passport-photo {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @keyframes meteorSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cool-steel-grey);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.6rem;
+      min-height: 3.5rem;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: var(--midnight-charcoal);
+    }
+
+    .hero-highlight {
+      color: var(--coral-orange);
+    }
+
+    .cursor-blink {
+      display: inline-block;
+      color: var(--coral-orange);
+      font-size: 2.8rem;
+      animation: blink 0.8s infinite;
+      font-weight: 300;
+      margin-left: 4px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-subtitle {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--coral-orange);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero p {
+      font-size: 1.12rem;
+      color: var(--cool-steel-grey);
+      max-width: 650px;
+      margin: 0 auto 2.2rem auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* Content Layout */
+    .section {
+      max-width: 1050px;
+      margin: 0 auto 5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-header-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-grow: 1;
+      color: var(--midnight-charcoal);
+    }
+
+    .section-title::after {
+      content: "";
+      flex-grow: 1;
+      height: 1px;
+      background: var(--cool-steel-border);
+      margin-left: 0.5rem;
+    }
+
+    /* Grid & Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-meta {
+      font-size: 0.85rem;
+      color: var(--coral-orange);
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+      color: var(--midnight-charcoal);
+    }
+
+    .card-institution {
+      color: var(--cool-steel-grey);
+      font-size: 0.95rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .score-badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: rgba(255, 75, 50, 0.08);
+      border: 1px solid rgba(255, 75, 50, 0.25);
+      color: var(--coral-orange);
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    /* Skill Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      font-size: 0.9rem;
+      padding: 0.5rem 1.05rem;
+      background: #ffffff;
+      color: var(--midnight-charcoal);
+      border-radius: 9999px;
+      border: 1px solid var(--surface-border);
+      transition: var(--transition);
+      cursor: default;
+      user-select: none;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .tag:hover {
+      background: var(--midnight-charcoal);
+      border-color: var(--midnight-charcoal);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(23, 23, 28, 0.15);
+    }
+
+    /* Connect Section */
+    .connect-card {
+      background: #ffffff;
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .connect-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .connect-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.8rem;
+      background: #f1f5f9;
+      border: 1px solid var(--surface-border);
+      color: var(--midnight-charcoal);
+      text-decoration: none;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .connect-btn:hover {
+      background: var(--midnight-charcoal);
+      border-color: var(--midnight-charcoal);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(23, 23, 28, 0.2);
+    }
+
+    /* -------------------------------------------------------------
+       PRINT ENGINE & NATURAL SINGLE-PAGE A4 CV
+       (Executive Navy Blue & Charcoal Only, Zero Footer, Zero Red)
+    ------------------------------------------------------------- */
+    #resume-print-area {
+      display: none;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      html, body {
+        width: 210mm !important;
+        height: 297mm !important;
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      nav,
+      .hero,
+      #education-section,
+      #certifications-section,
+      #skills-section,
+      #connect-section {
+        display: none !important;
+      }
+
+      #resume-print-area {
+        display: block !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
+        padding: 18mm 20mm !important;
+        background: #ffffff !important;
+        color: #0f172a !important;
+        box-sizing: border-box !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+        overflow: hidden !important;
+      }
+
+      .res-top {
+        border-bottom: 2.5px solid #1d4ed8;
+        padding-bottom: 8px;
+        margin-bottom: 14px;
+      }
+
+      .res-top h1 {
+        font-size: 24pt;
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 3px;
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+      }
+
+      .res-top .res-title {
+        font-size: 11pt;
+        font-weight: 700;
+        color: #1d4ed8;
+        margin-bottom: 8px;
+      }
+
+      .res-contacts-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        font-size: 8.8pt;
+        color: #475569;
+      }
+
+      .res-contacts-list a {
+        color: #0f172a;
+        text-decoration: none;
+      }
+
+      .res-statement {
+        font-size: 9.2pt;
+        line-height: 1.5;
+        color: #334155;
+        margin-bottom: 18px;
+        text-align: justify;
+      }
+
+      .res-section-block {
+        margin-bottom: 18px;
+      }
+
+      .res-block-title {
+        font-size: 10.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #0f172a;
+        border-bottom: 1.5px solid #cbd5e1;
+        padding-bottom: 3px;
+        margin-bottom: 10px;
+      }
+
+      .res-entry {
+        margin-bottom: 8px;
+      }
+
+      .res-entry-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 9.5pt;
+      }
+
+      .res-entry-head .title {
+        font-weight: 700;
+        color: #0f172a;
+      }
+
+      .res-entry-head .date {
+        font-size: 8.8pt;
+        color: #64748b;
+        font-weight: 600;
+      }
+
+      .res-entry-sub {
+        display: flex;
+        justify-content: space-between;
+        font-size: 8.8pt;
+        color: #475569;
+        margin-top: 1px;
+      }
+
+      .res-entry-sub .grade {
+        font-weight: 700;
+        color: #1d4ed8;
+      }
+
+      .res-entry ul {
+        margin: 3px 0 0 16px;
+        font-size: 8.5pt;
+        color: #475569;
+        line-height: 1.45;
+      }
+
+      .res-cert-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 20px;
+        font-size: 8.8pt;
+      }
+
+      .res-cert-item {
+        color: #0f172a;
+        line-height: 1.4;
+      }
+
+      .res-cert-item strong {
+        color: #0f172a;
+      }
+
+      .res-cert-item span {
+        display: block;
+        font-size: 8pt;
+        color: #64748b;
+      }
+
+      .res-skills-box {
+        font-size: 9pt;
+        color: #334155;
+        line-height: 1.6;
+      }
+
+      .res-skills-box strong {
+        color: #0f172a;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="brand">Prasthuth S Jain<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#education-section">Education</a></li>
+      <li><a href="#certifications-section">Certifications</a></li>
+      <li><a href="#skills-section">Skills</a></li>
+      <li><a href="#connect-section">Connect</a></li>
+      <li><button class="btn btn-primary" onclick="window.print()">Download CV</button></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero-section">
+    <!-- Stage with Revolving Meteor Track & Passport Photo Morph Card -->
+    <div class="avatar-stage" id="avatar-stage">
+      <div class="meteor-track" id="meteor-track"></div>
+      <div class="avatar-badge" id="avatar-badge">
+        <span class="pj-initials">PJ</span>
+        <img src="profile.png" alt="Prasthuth S Jain" class="passport-photo" />
+      </div>
+    </div>
+
+    <span class="hero-eyebrow">Data Science & Smart Automation Portfolio</span>
+    <div class="hero-title-container">
+      <h1 id="typewriter-heading"></h1>
+      <span class="cursor-blink">|</span>
+    </div>
+    <div class="hero-subtitle">BCA Data Science Scholar</div>
+    <p>
+      Undergraduate at Amrita Vishwa Vidyapeetham passionate about building intelligent data pipelines, software systems, and smart IoT automation architectures.
+    </p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="window.print()">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.62 2.48A2 2 0 004.56 21h14.88a2 2 0 001.94-1.52L22 17"/></svg>
+        Download CV
+      </button>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="section" id="education-section">
+    <div class="section-header-wrap">
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-meta">2025 – 2028</div>
+        <h3>BCA - Data Science</h3>
+        <p class="card-institution">Amrita Vishwa Vidyapeetham, Mysuru</p>
+        <span class="score-badge">8.01 CGPA</span>
+      </div>
+
+      <div class="card">
+        <div class="card-meta">2023 – 2025</div>
+        <h3>PUC (BASCs)</h3>
+        <p class="card-institution">Poorna Prajna PU College, Adamaru</p>
+        <span class="score-badge">93.67%</span>
+      </div>
+
+      <div class="card">
+        <div class="card-meta">2023</div>
+        <h3>10th Standard (SSLC)</h3>
+        <p class="card-institution">Minority Morarji Desai Residential School, Shivamogga</p>
+        <span class="score-badge">84.97%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="section" id="certifications-section">
+    <div class="section-header-wrap">
+      <h2 class="section-title">Certifications</h2>
+    </div>
+    <div class="grid">
+      <!-- 1 -->
+      <div class="card">
+        <div class="card-meta">Data Science & Analytics</div>
+        <h3>Introduction to Data Science</h3>
+        <p class="card-institution">Foundation in exploratory data analysis, statistical methods, and predictive data pipelines.</p>
+        <a href="https://www.linkedin.com/in/prasthuth-s-jain-0b1402396/overlay/Certifications/2118888707/treasury/?profileId=ACoAAGE8XgUBQom_gWTL5ZZXHIyFJcAoaSM6Ovc&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BGv%2BAJRYVTaGRnEsJMdennw%3D%3D" target="_blank" class="btn-view">
+          View Certification
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+
+      <!-- 2 -->
+      <div class="card">
+        <div class="card-meta">Core Programming</div>
+        <h3>Programming in C</h3>
+        <p class="card-institution">Procedural software development, dynamic memory allocation, and algorithmic logic.</p>
+        <a href="https://www.linkedin.com/in/prasthuth-s-jain-0b1402396/overlay/Certifications/2118983193/treasury/?profileId=ACoAAGE8XgUBQom_gWTL5ZZXHIyFJcAoaSM6Ovc&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BGv%2BAJRYVTaGRnEsJMdennw%3D%3D" target="_blank" class="btn-view">
+          View Certification
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+
+      <!-- 3 -->
+      <div class="card">
+        <div class="card-meta">Object-Oriented Programming</div>
+        <h3>Programming in C++</h3>
+        <p class="card-institution">OOP paradigms, standard template library (STL), data encapsulation, and efficiency modeling.</p>
+        <a href="https://www.linkedin.com/in/prasthuth-s-jain-0b1402396/overlay/Certifications/1071655398/treasury/?profileId=ACoAAGE8XgUBQom_gWTL5ZZXHIyFJcAoaSM6Ovc&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BGv%2BAJRYVTaGRnEsJMdennw%3D%3D" target="_blank" class="btn-view">
+          View Certification
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+
+      <!-- 4 -->
+      <div class="card">
+        <div class="card-meta">Application Engineering</div>
+        <h3>Java Course</h3>
+        <p class="card-institution">Robust application design, JVM architecture, multi-threading, and object structures.</p>
+        <a href="https://www.linkedin.com/in/prasthuth-s-jain-0b1402396/overlay/Certifications/388173476/treasury/?profileId=ACoAAGE8XgUBQom_gWTL5ZZXHIyFJcAoaSM6Ovc&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BGv%2BAJRYVTaGRnEsJMdennw%3D%3D" target="_blank" class="btn-view">
+          View Certification
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+
+      <!-- 5 -->
+      <div class="card">
+        <div class="card-meta">Smart Automation & Security</div>
+        <h3>Ajax Base-line Instruction</h3>
+        <p class="card-institution">Wireless intrusion systems engineering, IoT sensor configuration, and smart security architecture.</p>
+        <a href="https://www.linkedin.com/in/prasthuth-s-jain-0b1402396/overlay/Certifications/1953925945/treasury/?profileId=ACoAAGE8XgUBQom_gWTL5ZZXHIyFJcAoaSM6Ovc&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BGv%2BAJRYVTaGRnEsJMdennw%3D%3D" target="_blank" class="btn-view">
+          View Certification
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+
+      <!-- 6 -->
+      <div class="card">
+        <div class="card-meta">Commercial Workspace Automation</div>
+        <h3>Crestron Modern Workspace</h3>
+        <p class="card-institution">Commercial IoT control systems, integrated smart conferencing, and modern enterprise workspace automation.</p>
+        <a href="https://www.linkedin.com/in/prasthuth-s-jain-0b1402396/overlay/Certifications/2119153549/treasury/?profileId=ACoAAGE8XgUBQom_gWTL5ZZXHIyFJcAoaSM6Ovc&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BGv%2BAJRYVTaGRnEsJMdennw%3D%3D" target="_blank" class="btn-view">
+          View Certification
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section with Hover Animation -->
+  <section class="section" id="skills-section">
+    <div class="section-header-wrap">
+      <h2 class="section-title">Skills & Expertise</h2>
+    </div>
+    <div class="card">
+      <div class="tags">
+        <span class="tag">Data Science & Analytics</span>
+        <span class="tag">Python</span>
+        <span class="tag">Home Automation</span>
+        <span class="tag">Office Automation</span>
+        <span class="tag">C / C++</span>
+        <span class="tag">Java</span>
+        <span class="tag">SQL & Databases</span>
+        <span class="tag">Data Structures</span>
+        <span class="tag">Algorithms</span>
+        <span class="tag">HTML5 / CSS3</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Git & GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect Now Section -->
+  <section class="section" id="connect-section">
+    <div class="section-header-wrap">
+      <h2 class="section-title">Connect Now</h2>
+    </div>
+    <div class="connect-card">
+      <h3 style="font-size: 1.5rem; color: var(--midnight-charcoal); font-weight: 800;">Let's Build Something Impactful</h3>
+      <p style="color: var(--cool-steel-grey); max-width: 550px; font-size: 1rem;">
+        Feel free to reach out for collaborations, technology automation projects, or professional opportunities.
+      </p>
+      <div class="connect-links">
+        <a href="https://www.linkedin.com/in/prasthuth-s-jain-0b1402396/" target="_blank" class="connect-btn">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          Connect on LinkedIn
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=prasthuthsjain@gmail.com&su=Opportunity%20/%20Collaboration%20Inquiry" target="_blank" class="connect-btn">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Email Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clean Single-Page A4 Printable Resume -->
+  <div id="resume-print-area">
+    <!-- Header Block -->
+    <div class="res-top">
+      <h1>Prasthuth S Jain</h1>
+      <div class="res-title">BCA Data Science Scholar & Automation Specialist</div>
+      <div class="res-contacts-list">
+        <span>📍 Mysuru, Karnataka, India</span>
+        <span>✉️ prasthuthsjain@gmail.com</span>
+        <span>🔗 linkedin.com/in/prasthuth-s-jain</span>
+        <span>💻 github.com/prasthuth</span>
+      </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="res-statement">
+      Dedicated Data Science and Computer Applications undergraduate with a strong foundation in algorithmic problem solving, statistical programming, and modern software development. Experienced in building smart IoT hardware integration, residential and commercial office automation, and scalable data analytics pipelines.
+    </div>
+
+    <!-- 1. Education -->
+    <div class="res-section-block">
+      <div class="res-block-title">Education</div>
+      <div class="res-entry">
+        <div class="res-entry-head">
+          <span class="title">BCA - Data Science</span>
+          <span class="date">2025 – 2028</span>
+        </div>
+        <div class="res-entry-sub">
+          <span>Amrita Vishwa Vidyapeetham, Mysuru</span>
+          <span class="grade">8.01 CGPA</span>
+        </div>
+        <ul>
+          <li>Focusing on algorithmic data structures, predictive modeling, and database engineering.</li>
+        </ul>
+      </div>
+      
+      <div class="res-entry">
+        <div class="res-entry-head">
+          <span class="title">PUC (BASCs)</span>
+          <span class="date">2023 – 2025</span>
+        </div>
+        <div class="res-entry-sub">
+          <span>Poorna Prajna PU College, Adamaru</span>
+          <span class="grade">93.67%</span>
+        </div>
+        <ul>
+          <li>Core coursework in Business Studies, Accountancy, Statistics, and Computer Science.</li>
+        </ul>
+      </div>
+
+      <div class="res-entry">
+        <div class="res-entry-head">
+          <span class="title">10th Standard (SSLC)</span>
+          <span class="date">2023</span>
+        </div>
+        <div class="res-entry-sub">
+          <span>Minority Morarji Desai Residential School, Shivamogga</span>
+          <span class="grade">84.97%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Certifications in CV -->
+    <div class="res-section-block">
+      <div class="res-block-title">Verified Certifications & Technical Accreditations</div>
+      <div class="res-cert-grid">
+        <div class="res-cert-item">
+          • <strong>Introduction to Data Science</strong>
+          <span>Exploratory analysis, statistical foundations, and data pipelines.</span>
+        </div>
+        <div class="res-cert-item">
+          • <strong>Programming in C</strong>
+          <span>Procedural logic, pointers, memory allocation, and data flow.</span>
+        </div>
+        <div class="res-cert-item">
+          • <strong>Programming in C++</strong>
+          <span>OOP paradigms, STL architecture, and computational efficiency.</span>
+        </div>
+        <div class="res-cert-item">
+          • <strong>Java Course</strong>
+          <span>Object-oriented application structures, JVM internals, and multithreading.</span>
+        </div>
+        <div class="res-cert-item">
+          • <strong>Ajax Base-line Instruction</strong>
+          <span>Wireless intrusion hardware, IoT sensor deployment, and security.</span>
+        </div>
+        <div class="res-cert-item">
+          • <strong>Crestron Modern Workspace</strong>
+          <span>Integrated enterprise control, automated AV systems, and smart rooms.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Skills -->
+    <div class="res-section-block">
+      <div class="res-block-title">Technical Expertise & Core Competencies</div>
+      <div class="res-skills-box">
+        <p><strong>Languages & Development:</strong> Python, C, C++, Java, SQL, HTML5, CSS3, JavaScript, Git & GitHub</p>
+        <p style="margin-top: 5px;"><strong>Specialized Domains:</strong> Data Science & Statistical Analytics, Relational Database Design, Data Structures & Algorithms</p>
+        <p style="margin-top: 5px;"><strong>Automation Engineering:</strong> Home & Office Automation Systems, Smart Hardware Deployment, Security System Architectures</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Prevent jump to anchors on reload
+    if (history.scrollRestoration) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname + window.location.search);
+    }
+
+    // Typewriter effect + Meteor-to-Passport Photo Transition
+    (function() {
+      const fullText = "Hello, I am Prasthuth S Jain.";
+      const target = document.getElementById("typewriter-heading");
+      const avatarStage = document.getElementById("avatar-stage");
+      let index = 0;
+
+      function type() {
+        if (index < fullText.length) {
+          const currentString = fullText.slice(0, index + 1);
+          target.innerHTML = currentString.replace(
+            "Prasthuth S Jain.", 
+            '<span class="hero-highlight">Prasthuth S Jain.</span>'
+          );
+          index++;
+          setTimeout(type, 65);
+        } else {
+          // Dissolve meteor orbit, morph circle into 3:4 passport rectangle, and reveal photo
+          if (avatarStage) {
+            avatarStage.classList.add("completed");
+          }
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", type);
+      } else {
+        type();
+      }
+    })();
+  </script>
+</body>
+</html>
